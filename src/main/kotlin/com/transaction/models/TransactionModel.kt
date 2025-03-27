@@ -15,7 +15,11 @@ data class TransactionModel (
     @Id
     val id: UUID = UUID.randomUUID(),
 
+    val senderName: String,
+
     val senderDocument: String,
+
+    val receiverName: String,
 
     val receiverDocument: String,
 
