@@ -1,8 +1,8 @@
 package com.transaction.services
 
+import com.transaction.dtos.ResponseTransactionDto
 import com.transaction.dtos.TransactionDto
 import org.springframework.cloud.openfeign.FeignClient
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 
@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestBody
 interface TransactionServiceClient {
 
     @PostMapping("/transaction")
-    fun sendTransactionData(@RequestBody transactionDto: TransactionDto): ResponseEntity<String>
+    fun sendTransactionData(@RequestBody transactionDto: TransactionDto): ResponseTransactionDto
 }
