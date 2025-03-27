@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController
 class TransactionController(private val transactionService: TransactionService) {
 
     @PostMapping
-    fun createTransaction(@RequestBody transactionDto: TransactionDto): ResponseEntity<ResponseEntity<String>> {
-        val teste = transactionService.createTransaction(transactionDto)
-        return ResponseEntity(teste, HttpStatus.CREATED)
+    fun createTransaction(@RequestBody transactionDto: TransactionDto): ResponseEntity<TransactionModel> {
+        val newTransaction = transactionService.createTransaction(transactionDto)
+        return ResponseEntity(newTransaction, HttpStatus.CREATED)
     }
 }
